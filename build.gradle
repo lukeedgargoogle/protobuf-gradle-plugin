@@ -121,7 +121,7 @@ publishing {
 // The Gradle plugin portal doesn't allow signature files.
 if (!gradle.startParameter.taskNames.intersect(['publishPlugins'])) {
   signing {
-       required { isReleaseVersion }
+       required = isReleaseVersion
        sign publishing.publications.pluginMaven
   }
 }
